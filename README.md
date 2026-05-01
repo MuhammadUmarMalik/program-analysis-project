@@ -1,23 +1,42 @@
 # 02242-Program-Analysis-Project
 Project Analysis Final Project Code for Project "ASTRA"
 
-# Command to run current code
+See [docs/analysis_design.md](docs/analysis_design.md) for the full design
+document covering both abstract domains and the interpreter architecture.
+
+## Quick start
+
+```bash
+# Build jpamb test suite
 uv run jpamb -vv build
 
-# Command to run Interpreter
-uv run jpamb interpret -W  --timeout 10 --stepwise solutions/interpreter.py
+# Run concrete interpreter
+uv run jpamb interpret -W --timeout 10 --stepwise solutions/interpreter.py
 
-# Command to test abstraction (run tests)
-uv run pytest test\test_abstract_interpreter.py
+# Run unit tests
+uv run pytest tests/ -v
 
-# Command to run analyzer
-uv run jpamb test  .\solutions\my_analyzer.py
+# Run main analyzer (baseline StringAbs domain)
+uv run jpamb test solutions/my_analyzer.py
 
-# Command to run syntactic analysis for strings
-uv run solutions/syntactic_analysis.py 'any method from cases' (example:'jpamb.cases.Strings.stringEqualsHello:(Ljava lang/String;)V')
+# Evaluate and dump JSON results
+uv run jpamb evaluate solutions/my_analyzer.py > results_baseline.json
 
-# Command to get scores/results in a file for syntactic analysis
-uv run jpamb evaluate ./solutions/syntactic_analysis.py > syntactic_result.json
+# Syntactic fast-path analyzer
+uv run jpamb evaluate solutions/syntactic_analysis.py > results_syntactic.json
 
-# Command to test novel abstraction (run tests)
-uv run jpamb test .\solutions\novel_analyzer.py
+# Benchmark: baseline vs prefix abstract interpreter
+python solutions/benchmark.py --max-cases 100
+
+# String-tree analyzer (expression-tree tracking)
+python solutions/abstract_interpreter_stringtree.py \
+    'jpamb.cases.Strings.stringEqualsHello:(Ljava/lang/String;)V'
+```
+
+## Abstract domains
+
+| Domain       | File                          | Key extras               |
+|-------------|-------------------------------|--------------------------|
+| StringAbs   | `solutions/abstract_interpreter.py` | const + length interval |
+| StringAbs2  | `solutions/string_abs2.py`    | prefix + length + null flag |
+| StringTree  | `solutions/stringtree.py`     | symbolic expression trees |
