@@ -321,9 +321,11 @@ def step(state: State) -> State | str:
                         raise NotImplementedError(f"Don't know how to handle the condition: {opr!r}")    
             elif isinstance(v1.type, jvm.Reference):
                 if cond == "is":
-                    take = (v1 == 0)
-                elif c == "isnot":
-                    take = (v1 != 0)
+                    take = (v1.value is None)
+                elif cond == "isnot":
+                    take = (v1.value is not None)
+                else:
+                    raise NotImplementedError(f"Unknown Ifz ref condition: {cond!r}")
             else:
                 raise TypeError(f"ifz expected int or ref, but got {v1}")
         
@@ -351,17 +353,13 @@ def step(state: State) -> State | str:
                 frame.pc += 1
                 return state
 
-            assert val.type is t, f"expected {t}, but got {val}"
-            # coerce to expected type (keeps locals consistent)
+            # String refs arrive as jvm.Reference in bytecode; they are handled above.
+            # Remaining types: Int, Boolean (stored as int).
             if t is jvm.Int():
                 val = jvm.Value.int(val.value)
             elif t is jvm.Boolean():
                 val = jvm.Value.int(1 if val.value != 0 else 0)
-            elif t is _ArrayObj():
-                val = val  # already an _ArrayObj
-            elif t is jvm.String():
-                val = val  # already a String object
-            else:
+            elif not (val.type is t):
                 assert False, f"not implemented for type {t}"
             # write local
             frame.locals[i] = val
@@ -744,7 +742,9 @@ def step(state: State) -> State | str:
             if obj is None:
                 return "exception" 
 
-            if obj["class"].name == "java/lang/AssertionError":
+            cls_val = obj["class"]
+            cls_name = cls_val.name if hasattr(cls_val, "name") else str(cls_val)
+            if "AssertionError" in cls_name:
                 return "assertion error"
             return "exception"
 
