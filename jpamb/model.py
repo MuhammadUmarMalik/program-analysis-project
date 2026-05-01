@@ -31,7 +31,7 @@ class Input:
 
     @staticmethod
     def decode(input: str) -> "Input":
-        if input[0] != "(" and input[-1] != ")":
+        if input[0] != "(" or input[-1] != ")":
             raise ValueError(f"Expected input to be in parenthesis, but got {input}")
         values = jvm.Value.decode_many(input)
         return Input(tuple(values))
@@ -40,9 +40,7 @@ class Input:
         return "(" + ", ".join(v.encode() for v in self.values) + ")"
 
 
-#CASE_RE = re.compile(r"([^ ]*) +(\([^)]*\)) -> (.*)")
-#CASE_RE = re.compile(r"([^ ]*) +(\(.*\)) -> (.*)")
-CASE_RE = re.compile(r"([^ ]*) +(\([^)]*\)) -> (.*)")
+CASE_RE = re.compile(r"([^ ]*) +(\(.*\)) -> (.*)")
 
 
 

@@ -156,10 +156,10 @@ class Type(ABC):
         return r, input[i + 1 :]
 
     def __lt__(self, other):
-        return self.encode() <= other.encode()
+        return self.encode() < other.encode()
 
     def __eq__(self, other):
-        return self.encode() <= other.encode()
+        return type(self) == type(other) and self.encode() == other.encode()
 
     @staticmethod
     def from_json(json: str) -> "Type":
@@ -413,9 +413,9 @@ class Array(Type):
 
     def math(self):
         return f"array {self.contains.math()}"
-    
+
     def descriptor(self) -> str:
-        return self.encode()
+        return "[" + self.contains.descriptor()
 
 @dataclass(frozen=True)
 class Long(StackType):
@@ -504,7 +504,7 @@ class ParameterType:
         return "".join(e.encode() for e in self._elements)
     
     def descriptors(self) -> tuple[str, ...]:
-        return tuple(t.encode() for t in self._elements)
+        return tuple(t.descriptor() for t in self._elements)
     
     def __eq__(self, other):
         return (
@@ -538,7 +538,7 @@ class ParameterType:
         return ParameterType(tuple(params))
 
     def math(self):
-        return "double"
+        return ", ".join(t.math() for t in self._elements)
 
 
 #METHOD_ID_RE_RAW = r"(?P<method_name>.*)\:\((?P<params>.*)\)(?P<return>.*)"
@@ -576,6 +576,12 @@ class MethodID:
     def encode(self) -> str:
         rt = self.return_type.encode() if self.return_type is not None else "V"
         return f"{self.name}:({self.params.encode()}){rt}"
+
+    def descriptor(self) -> str:
+        """Full JVM descriptor using proper type descriptors (e.g., Ljava/lang/String;)."""
+        rt = self.return_type.descriptor() if self.return_type is not None else "V"
+        params = "".join(t.descriptor() for t in self.params)
+        return f"{self.name}:({params}){rt}"
 
 
 @dataclass(frozen=True, order=True)
@@ -644,6 +650,10 @@ class AbsMethodID(Absolute[MethodID]):
     @property
     def methodid(self):
         return self.extension
+
+    def jvm_str(self) -> str:
+        """Returns the full method ID with proper JVM descriptors for passing to Java."""
+        return f"{self.classname.encode()}.{self.extension.descriptor()}"
 
     @classmethod
     def from_json(cls, json: dict) -> "Self":

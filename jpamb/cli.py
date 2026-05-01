@@ -117,7 +117,7 @@ def run(cmd: list[str], /, timeout=2.0, logout=None, logerr=None, **kwargs):
         )
         tout.start()
 
-                # Compute remaining time; ensure it's never negative
+        # Compute remaining time; ensure it's never negative
         if timeout:
             remaining = end - monotonic()
             if remaining <= 0:
@@ -698,7 +698,7 @@ def build(suite, compile, decompile, document, test, docker):
                     cp,
                     "-ea",
                     "jpamb.Runtime",
-                    str(case.methodid),
+                    case.methodid.jvm_str(),
                     input_arg,
                 ]
 
