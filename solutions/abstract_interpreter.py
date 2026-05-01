@@ -423,47 +423,47 @@ def str_concat(a: StringAbs, b: StringAbs) -> StringAbs:
 
 
 def str_substring(s: StringAbs, i_ivl: Interval, j_ivl: Interval) -> Tuple[StringAbs, bool]:
-    """
-    Returns (result_string_abs, may_out_of_bounds)
+    """Returns (result_string_abs, may_out_of_bounds).
+
+    Sound: reports may_oob whenever substring(i,j) *could* violate
+    0 <= i <= j <= len(s) for any concrete string in s.
     """
     if s.is_bot or i_ivl.is_bot or j_ivl.is_bot:
         return StringAbs.bot(), False
 
     may_oob = False
-
-    # over-approximate index range
     i_lo, i_hi = i_ivl.lo, i_ivl.hi
     j_lo, j_hi = j_ivl.lo, j_ivl.hi
-
-    # length of original string
     L = s.length
 
     if L.is_bot:
         may_oob = True
     else:
+        # Negative indices are always invalid.
         if i_lo < 0 or j_lo < 0:
             may_oob = True
-        if i_hi >= L.hi or j_hi > L.hi:
-            may_oob = True
+        # i > j is always invalid.
         if i_lo > j_hi:
             may_oob = True
+        # j > len(s) is invalid: j_hi could exceed the *minimum* length L.lo.
+        # (Using L.hi would miss cases where L is small but j is large.)
+        if not L.is_bot and j_hi > L.lo:
+            may_oob = True
 
-    sub_lo = max(0, j_lo - i_hi)
-    sub_hi = max(0, j_hi - i_lo)
+    sub_lo = max(0, j_lo - i_hi) if not (i_ivl.is_bot or j_ivl.is_bot) else 0
+    sub_hi = max(0, j_hi - i_lo) if not (i_ivl.is_bot or j_ivl.is_bot) else 0
     sub_len = Interval(sub_lo, sub_hi)
 
     const = None
     if (
         s.const is not None
-        and not i_ivl.is_bot
-        and not j_ivl.is_bot
         and i_ivl.lo == i_ivl.hi
         and j_ivl.lo == j_ivl.hi
     ):
-        i = int(i_ivl.lo)
-        j = int(j_ivl.lo)
+        i_idx = int(i_ivl.lo)
+        j_idx = int(j_ivl.lo)
         try:
-            const = s.const[i:j]
+            const = s.const[i_idx:j_idx]
             sub_len = Interval.const(len(const))
         except Exception:
             may_oob = True
@@ -955,24 +955,25 @@ def step_abstract(state: State) -> list[State] | str:
                         s_abs: StringAbs = obj["fields"]["value"]
                         L = s_abs.length
 
-                        # precise case
+                        # Definitely OOB: index < 0 or index >= minimum possible length.
+                        if not idx_ivl.is_bot and idx_ivl.lo < 0:
+                            return "out of bounds"
+                        if not idx_ivl.is_bot and not L.is_bot and idx_ivl.hi >= L.lo:
+                            return "out of bounds"
+
+                        # Precise case: single known index into a constant string.
                         if (
-                            not idx_ivl.is_bot
-                            and not L.is_bot
+                            s_abs.const is not None
+                            and not idx_ivl.is_bot
                             and idx_ivl.lo == idx_ivl.hi
-                            and L.lo == L.hi
                         ):
                             i = int(idx_ivl.lo)
-                            n = int(L.lo)
-                            if i < 0 or i >= n:
+                            if i < 0 or i >= len(s_abs.const):
                                 return "out of bounds"
-                            push(('int', Interval(0, 65535)))
+                            ch_code = ord(s_abs.const[i])
+                            push(('int', Interval.const(ch_code)))
                             frame.pc += 1
                             return [state]
-
-                        # conservative case
-                        if idx_ivl.lo < 0 or (not L.is_bot and idx_ivl.hi >= L.hi):
-                            return "out of bounds"
 
                         push(('int', Interval(0, 65535)))
                         frame.pc += 1
