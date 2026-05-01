@@ -1,10 +1,8 @@
 from dataclasses import dataclass
 from math import inf
-from typing import Optional, Tuple, Union
-from typing import Dict, List
+from typing import Optional, Tuple, Union, Dict, List
 import jpamb
 from jpamb import jvm
-from dataclasses import dataclass
 import sys
 from loguru import logger
 import copy
@@ -15,8 +13,8 @@ warnings = []
 
 ASSERTIONS_ENABLED = True
 
-@dataclass(frozen=True)
 
+@dataclass(frozen=True)
 class Interval:
     lo: Optional[float]
     hi: Optional[float]
@@ -443,7 +441,7 @@ def str_substring(s: StringAbs, i_ivl: Interval, j_ivl: Interval) -> Tuple[Strin
     else:
         if i_lo < 0 or j_lo < 0:
             may_oob = True
-        if i_hi >= L.hi or j_hi > L.hi:
+        if j_hi > L.lo:
             may_oob = True
         if i_lo > j_hi:
             may_oob = True
@@ -615,11 +613,7 @@ def step_abstract(state: State) -> list[State] | str:
                     }
                     push(('ref', oid))
                 case _:
-                    # unknown literal kind -> conservative int TOP
-                    if v.value is None:
-                        push(('ref', None))
-                    else:
-                        push(('ref', None))
+                    push(('ref', None))
 
 
             frame.pc += 1
@@ -879,8 +873,7 @@ def step_abstract(state: State) -> list[State] | str:
                 # may be negative
                 return "negative array size"
 
-            # for now, require concrete length
-            size = int(len_ivl.lo) if len_ivl.lo == len_ivl.hi else int(len_ivl.lo)
+            size = int(len_ivl.lo)
             arr_obj = _ArrayObj(elem_type, size)
             idx = len(state.heap)
             state.heap[idx] = arr_obj
@@ -971,7 +964,7 @@ def step_abstract(state: State) -> list[State] | str:
                             return [state]
 
                         # conservative case
-                        if idx_ivl.lo < 0 or (not L.is_bot and idx_ivl.hi >= L.hi):
+                        if idx_ivl.lo < 0 or (not L.is_bot and idx_ivl.hi >= L.lo):
                             return "out of bounds"
 
                         push(('int', Interval(0, 65535)))
@@ -1236,13 +1229,8 @@ def step_abstract(state: State) -> list[State] | str:
                 )
 
             # ---------- Default: normal static call ----------
-            norm_args: list[AVal] = []
-            for t, v in zip(param_types, args):
-                norm_args.append(v)
-
             callee = Frame.from_method(m)
-            callee.locals = {i: v for i, v in enumerate(norm_args)}
-            callee.pc = PC(callee.pc.method, callee.pc.offset)
+            callee.locals = {i: v for i, v in enumerate(args)}
             state.frames.push(callee)
             return [state]
 
@@ -1461,9 +1449,6 @@ if __name__ == "__main__":
         )
         sys.exit(0)
 
-    # Normal analyzer mode: get a case from jpamb and run your analysis.
     methodid = jpamb.parse_methodid(sys.argv[-1])
     result = analyze_method_no_inputs(methodid)
-    # methodid, input = jpamb.getcase()
-    # result= analyze_method_no_inputs(methodid)
     print(result)

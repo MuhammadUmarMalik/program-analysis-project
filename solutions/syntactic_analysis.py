@@ -461,7 +461,7 @@ if __name__ == "__main__":
     methodid = jpamb.getmethodid(
         "mixed effort Analyzer",
         "1.0 beta",
-        "Shit on wheels",
+        "ASTRA",
         ["mixed", "python"],
         for_science=True,
     )
@@ -469,7 +469,7 @@ if __name__ == "__main__":
     if len(sys.argv) == 2 and sys.argv[1] == "info":
         print("mixed effort Analyzer")
         print("1.0 beta")
-        print("Shit on wheels")
+        print("ASTRA")
         print("mixed,python")
         print("no")
         sys.exit(0)
@@ -563,8 +563,7 @@ if __name__ == "__main__":
     else:
         ok = 40
 
-    # keep * as some neutral-ish background category
-    inf = 20
+    star_pct = 20
 
     preds = [
         f"ok;{ok}%",
@@ -572,7 +571,7 @@ if __name__ == "__main__":
         f"assertion error;{asrt}%",
         f"out of bounds;{oob}%",
         f"null pointer;{npe}%",
-        f"*;{inf}%",
+        f"*;{star_pct}%",
     ]
 
     print("=== Prediction Heuristics ===")

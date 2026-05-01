@@ -28,20 +28,6 @@ class PC:
         return f"{self.method}:{self.offset}"
 
 
-#@dataclass
-#class Bytecode:
-#    suite: jpamb.Suite
-#    methods: dict[jvm.AbsMethodID, list[jvm.Opcode]]
-#
-#    def __getitem__(self, pc: PC) -> jvm.Opcode:
-#        try:
-#            opcodes = self.methods[pc.method]
-#        except KeyError:
-#            opcodes = list(self.suite.method_opcodes(pc.method))
-#            self.methods[pc.method] = opcodes
-#
-#        return opcodes[pc.offset]
-    
 @dataclass
 class Bytecode:
     suite: jpamb.Suite
@@ -103,17 +89,12 @@ class Frame:
     pc: PC
 
     def __str__(self):
-        locals = ", ".join(f"{k}:{v}" for k, v in sorted(self.locals.items()))
-        return f"<{{{locals}}}, {self.stack}, {self.pc}>"
+        loc_str = ", ".join(f"{k}:{v}" for k, v in sorted(self.locals.items()))
+        return f"<{{{loc_str}}}, {self.stack}, {self.pc}>"
 
+    @staticmethod
     def from_method(method: jvm.AbsMethodID) -> "Frame":
         return Frame({}, Stack.empty(), PC(method, 0))
-
-# Tiny object handle we can tag with a class name
-#class _ObjRef:
-#    __slots__ = ("class_name",)
-#    def __init__(self, class_name: str):
-#        self.class_name = class_name
 
 @dataclass
 class State:
@@ -144,18 +125,6 @@ class _ObjRef:
     def __init__(self, class_name: str):
         self.class_name = str(class_name)
         self.inited = False  # set true by <init
-'''
-def _jump_pc(method: jvm.AbsMethodID, tgt_offset: int) -> PC:
-    # Load bytecodes & precompute map if needed
-    bc._ensure_loaded(method)
-    idx_map = bc.offset_to_index[method]
-    try:
-        logger.debug(f"Jumping to offset {tgt_offset} in {method}, idx_map: {idx_map}") 
-        idx = idx_map[tgt_offset]
-    except KeyError:
-        raise ValueError(f"Branch target offset {tgt_offset} not found in {method}")
-    return PC(method, idx)
-'''
 def _jump_pc(method: jvm.AbsMethodID, tgt: int) -> PC:
     # ensure ops loaded
     ops = bc.methods.get(method)
@@ -321,9 +290,11 @@ def step(state: State) -> State | str:
                         raise NotImplementedError(f"Don't know how to handle the condition: {opr!r}")    
             elif isinstance(v1.type, jvm.Reference):
                 if cond == "is":
-                    take = (v1 == 0)
-                elif c == "isnot":
-                    take = (v1 != 0)
+                    take = (v1.value is None)
+                elif cond == "isnot":
+                    take = (v1.value is not None)
+                else:
+                    raise NotImplementedError(f"Unknown Ifz condition for ref: {cond!r}")
             else:
                 raise TypeError(f"ifz expected int or ref, but got {v1}")
         
@@ -352,17 +323,10 @@ def step(state: State) -> State | str:
                 return state
 
             assert val.type is t, f"expected {t}, but got {val}"
-            # coerce to expected type (keeps locals consistent)
             if t is jvm.Int():
                 val = jvm.Value.int(val.value)
             elif t is jvm.Boolean():
                 val = jvm.Value.int(1 if val.value != 0 else 0)
-            elif t is _ArrayObj():
-                val = val  # already an _ArrayObj
-            elif t is jvm.String():
-                val = val  # already a String object
-            else:
-                assert False, f"not implemented for type {t}"
             # write local
             frame.locals[i] = val
 
