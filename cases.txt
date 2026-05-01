@@ -1,0 +1,73 @@
+LArrays;.arrayContent:()V () -> assertion error
+LArrays;.arrayInBounds:()V () -> ok
+LArrays;.arrayIsNull:()V () -> null pointer
+LArrays;.arrayIsNullLength:()V () -> null pointer
+LArrays;.arrayLength:()V () -> ok
+LArrays;.arrayNotEmpty:([I)V ([I:1]) -> ok
+LArrays;.arrayNotEmpty:([I)V ([I:]) -> assertion error
+LArrays;.arrayOutOfBounds:()V () -> out of bounds
+LArrays;.arraySometimesNull:(I)V (0) -> out of bounds
+LArrays;.arraySometimesNull:(I)V (11) -> null pointer
+LArrays;.arraySpellsHello:([C)V ([C:'h', 'e', 'l', 'l', 'o']) -> ok
+LArrays;.arraySpellsHello:([C)V ([C:'x']) -> assertion error
+LArrays;.arraySpellsHello:([C)V ([C:]) -> out of bounds
+LArrays;.arraySumIsLarge:([I)V ([I:50, 100, 200]) -> ok
+LArrays;.arraySumIsLarge:([I)V ([I:]) -> assertion error
+LArrays;.binarySearch:(I)V (3) -> ok
+LArrays;.binarySearch:(I)V (6) -> assertion error
+LCalls;.allPrimesArePositive:(I)V (-1) -> assertion error
+LCalls;.allPrimesArePositive:(I)V (0) -> out of bounds
+LCalls;.allPrimesArePositive:(I)V (100) -> ok
+LCalls;.callsAssertFalse:()V () -> assertion error
+LCalls;.callsAssertFib:(I)V (0) -> assertion error
+LCalls;.callsAssertFib:(I)V (8) -> ok
+LCalls;.callsAssertIf:(Z)V (false) -> assertion error
+LCalls;.callsAssertIf:(Z)V (true) -> ok
+LCalls;.callsAssertIfWithTrue:()V () -> ok
+LCalls;.callsAssertTrue:()V () -> ok
+LLoops;.forever:()V () -> *
+LLoops;.neverAsserts:()V () -> *
+LLoops;.neverDivides:()I () -> *
+LLoops;.terminates:()V () -> assertion error
+LSimple;.assertBoolean:(Z)V (false) -> assertion error
+LSimple;.assertBoolean:(Z)V (true) -> ok
+LSimple;.assertFalse:()V () -> assertion error
+LSimple;.assertInteger:(I)V (0) -> assertion error
+LSimple;.assertInteger:(I)V (1) -> ok
+LSimple;.assertPositive:(I)V (-1) -> assertion error
+LSimple;.assertPositive:(I)V (1) -> ok
+LSimple;.checkBeforeAssert:(I)V (-1) -> assertion error
+LSimple;.checkBeforeAssert:(I)V (0) -> ok
+LSimple;.checkBeforeDivideByN2:(I)I (0) -> ok
+LSimple;.checkBeforeDivideByN2:(I)I (1) -> ok
+LSimple;.checkBeforeDivideByN:(I)I (0) -> assertion error
+LSimple;.checkBeforeDivideByN:(I)I (1) -> ok
+LSimple;.divideByN:(I)I (0) -> divide by zero
+LSimple;.divideByN:(I)I (1) -> ok
+LSimple;.divideByNMinus10054203:(I)I (0) -> ok
+LSimple;.divideByNMinus10054203:(I)I (10054203) -> divide by zero
+LSimple;.divideByZero:()I () -> divide by zero
+LSimple;.divideZeroByZero:(II)I (0, 0) -> divide by zero
+LSimple;.divideZeroByZero:(II)I (0, 1) -> ok
+LSimple;.earlyReturn:()I () -> ok
+LSimple;.justAdd:(II)I (1, 2) -> ok
+LSimple;.justMulitply:(II)I (1, 2) -> ok
+LSimple;.justReturn:()I () -> ok
+LSimple;.justReturnNothing:()V () -> ok
+LSimple;.multiError:(Z)I (false) -> assertion error
+LSimple;.multiError:(Z)I (true) -> divide by zero
+LStrings;.stringContent:()V () -> assertion error
+LStrings;.stringEqualsHello:(Ljava/lang/String;)V ("hello") -> ok
+LStrings;.stringEqualsHello:(Ljava/lang/String;)V ("hi") -> assertion error
+LStrings;.stringInBounds:()V () -> ok
+LStrings;.stringIsNullCharAt:()V () -> null pointer
+LStrings;.stringIsNullLength:()V () -> null pointer
+LStrings;.stringLength:()V () -> ok
+LStrings;.stringOutOfBounds:()V () -> out of bounds
+LStrings;.stringSometimesNull:(I)V (0) -> out of bounds
+LStrings;.stringSometimesNull:(I)V (11) -> null pointer
+LStrings;.stringSpellsHello:(Ljava/lang/String;)V ("") -> out of bounds
+LStrings;.stringSpellsHello:(Ljava/lang/String;)V ("hello") -> ok
+LStrings;.stringSpellsHello:(Ljava/lang/String;)V ("world") -> assertion error
+LTricky;.collatz:(I)V (0) -> assertion error
+LTricky;.collatz:(I)V (24) -> ok

@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx claude-code-templates@latest:*)",
+      "Bash(python D:/umar-dev/.claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio personal brand developer full stack professional\" --design-system -p \"Muhammad Umar Portfolio\")",
+      "Bash(python3 D:/umar-dev/.claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio personal brand developer full stack professional\" --design-system -p \"Muhammad Umar Portfolio\")",
+      "Bash(findstr *)",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio developer personal brand professional premium\" --design-system -p \"Muhammad Umar Portfolio\" -f markdown)",
+      "Bash(python -c \"import sys; sys.stdout.reconfigure\\(encoding='utf-8'\\)\")",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio developer personal brand professional premium\" --design-system -p \"Muhammad Umar Portfolio\")",
+      "WebSearch",
+      "WebFetch(domain:www.webportfolios.dev)",
+      "WebFetch(domain:muz.li)",
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"developer portfolio personal brand freelancer premium\" --design-system -p \"Muhammad Umar\")",
+      "Bash(python .claude/skills/code-reviewer/scripts/pr_analyzer.py *)",
+      "Bash(python .claude/skills/code-reviewer/scripts/code_quality_checker.py *)",
+      "Bash(python .claude/skills/code-reviewer/scripts/review_report_generator.py *)",
+      "Bash(python3 .claude/skills/code-reviewer/scripts/pr_analyzer.py *)",
+      "Bash(python3 .claude/skills/code-reviewer/scripts/code_quality_checker.py *)",
+      "Bash(python3 .claude/skills/code-reviewer/scripts/review_report_generator.py *)"
+    ]
+  }
+}
