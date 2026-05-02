@@ -31,8 +31,9 @@ def main():
     # Normal analysis mode (no concrete inputs)
     try:
         outcomes = analyze_method_no_inputs(methodid)
-    except Exception:
+    except Exception as e:
         # If the abstract interpreter crashes, fall back to "no info"
+        print(f"[my_analyzer] analysis failed for {methodid}: {e}", file=sys.stderr)
         outcomes = []
 
     # Optionally fetch warnings (not used in scoring, but available)

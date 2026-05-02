@@ -441,9 +441,9 @@ def str_substring(s: StringAbs, i_ivl: Interval, j_ivl: Interval) -> Tuple[Strin
     else:
         if i_lo < 0 or j_lo < 0:
             may_oob = True
-        if j_hi > L.lo:
+        if j_hi > L.hi:
             may_oob = True
-        if i_lo > j_hi:
+        if i_hi > j_lo:
             may_oob = True
 
     sub_lo = max(0, j_lo - i_hi)
@@ -584,14 +584,14 @@ def step_abstract(state: State) -> list[State] | str:
         try:
             return frame.stack.pop()
         except IndexError:
-            # Log detailed debugging information to help locate the underflow
+            import traceback
             logger.error(f"Stack underflow in step_abstract while handling {opr!r}")
             logger.error(f"Current frame: {frame}")
             logger.error(f"Frames stack: {state.frames}")
             logger.error(f"Heap keys: {list(state.heap.keys())}")
-            # Recover conservatively by returning an unknown int interval
-            # so the analysis can continue rather than crash the harness.
-            return ('int', Interval.top())    
+            logger.error(traceback.format_exc())
+            # Propagate: a stack underflow is a bytecode/interpreter bug, not a safe recovery.
+            raise
 
     match opr:
 
@@ -676,13 +676,18 @@ def step_abstract(state: State) -> list[State] | str:
             else:
                 return "ok"
 
-        # ----------------- Cast Int->Short (approximate) -----------------
+        # ----------------- Cast Int->Short -----------------
         case jvm.Cast(from_=jvm.Int(), to_=jvm.Short()):
             v1 = pop()
             assert is_int(v1), f"expected int, but got {v1}"
             ivl = get_int_ivl(v1)
-            # For now, ignore narrowing / wrap-around, keep interval as-is.
-            push(('int', ivl))
+            SHORT_MIN, SHORT_MAX = -32768, 32767
+            if ivl.lo >= SHORT_MIN and ivl.hi <= SHORT_MAX:
+                result = ivl  # fits in short range, no wrap-around
+            else:
+                # value may wrap around: conservatively use full short range
+                result = Interval(SHORT_MIN, SHORT_MAX)
+            push(('int', result))
             frame.pc += 1
             return [state]
 
@@ -844,10 +849,14 @@ def step_abstract(state: State) -> list[State] | str:
             assert is_int(index_val), f"expected int index, got {index_val}"
             idx_ivl = get_int_ivl(index_val)
             if idx_ivl.lo != idx_ivl.hi:
-                # if the interval might go OOB, report
+                # uncertain index: check for possible OOB
                 if idx_ivl.lo < 0 or idx_ivl.hi >= instance.length:
                     return "out of bounds"
-                # otherwise, we could in theory write to multiple cells; just ignore.
+                # conservatively update all cells the index might point to
+                lo_idx = max(0, int(idx_ivl.lo))
+                hi_idx = min(instance.length - 1, int(idx_ivl.hi))
+                for cell_i in range(lo_idx, hi_idx + 1):
+                    instance.data[cell_i] = join_avals(instance.data[cell_i], value)
                 frame.pc += 1
                 return [state]
 
@@ -963,8 +972,8 @@ def step_abstract(state: State) -> list[State] | str:
                             frame.pc += 1
                             return [state]
 
-                        # conservative case
-                        if idx_ivl.lo < 0 or (not L.is_bot and idx_ivl.hi >= L.lo):
+                        # conservative case: OOB if index might be negative or might reach/exceed max length
+                        if idx_ivl.lo < 0 or (not L.is_bot and idx_ivl.hi >= L.hi):
                             return "out of bounds"
 
                         push(('int', Interval(0, 65535)))
@@ -1312,6 +1321,23 @@ def step_abstract(state: State) -> list[State] | str:
             objref_val = pop()
             raise NotImplementedError("Get instance field not implemented")
 
+        # ----------------- InvokeDynamic -----------------
+        case jvm.InvokeDynamic(method=m):
+            # Common case: string concatenation via makeConcatWithConstants
+            param_types = list(m.extension.params or [])
+            for _ in range(len(param_types)):
+                pop()
+            ret = m.extension.return_type
+            if isinstance(ret, jvm.Object) and ret.name.slashed() in ("java/lang/String", "java/lang/Object"):
+                s_abs = StringAbs.top()
+                oid = len(state.heap)
+                state.heap[oid] = {"class": jvm.String(), "fields": {"value": s_abs}}
+                push(('ref', oid))
+            elif not isinstance(ret, jvm.Void):
+                push(('int', Interval.top()))
+            frame.pc += 1
+            return [state]
+
         # ----------------- Fallback -----------------
         case a:
             a.help()
@@ -1390,10 +1416,48 @@ def states_equal(a: Frame, b: Frame) -> bool:
     return a.locals == b.locals and a.stack == b.stack  # coarse but fine
 
 
+_WIDEN_THRESHOLD = 5  # widen after this many joins at the same program point
+
+
+def _widen_interval(prev: Interval, curr: Interval) -> Interval:
+    """Widen curr against prev: blow out bounds that moved in the growing direction."""
+    if prev.is_bot:
+        return curr
+    if curr.is_bot:
+        return prev
+    lo = curr.lo if curr.lo >= prev.lo else NEG_INF  # type: ignore[operator]
+    hi = curr.hi if curr.hi <= prev.hi else POS_INF  # type: ignore[operator]
+    return Interval(lo, hi)
+
+
+def _widen_aval(prev: AVal, curr: AVal) -> AVal:
+    kind_p, val_p = prev
+    kind_c, val_c = curr
+    if kind_p != kind_c:
+        return curr
+    if kind_p == 'int':
+        return ('int', _widen_interval(val_p, val_c))  # type: ignore[arg-type]
+    return curr  # refs: no widening needed
+
+
+def _widen_frames(prev: Frame, curr: Frame) -> Frame:
+    keys = set(prev.locals.keys()) | set(curr.locals.keys())
+    wlocals = {k: _widen_aval(
+        prev.locals.get(k, ('int', Interval.top())),
+        curr.locals.get(k, ('int', Interval.top()))
+    ) for k in keys}
+    if len(prev.stack) == len(curr.stack):
+        wstack_list = [_widen_aval(x, y) for x, y in zip(prev.stack, curr.stack)]
+    else:
+        wstack_list = [('int', Interval.top())] * max(len(prev.stack), len(curr.stack))
+    return Frame(locals=wlocals, stack=Stack(wstack_list), pc=curr.pc)
+
+
 def run_worklist_result(initial: State) -> List[str]:
     resultList: List[str] = []
     worklist: List[State] = [initial]
     seen: Dict[Tuple[jvm.AbsMethodID, int], Frame] = {}
+    visit_count: Dict[Tuple[jvm.AbsMethodID, int], int] = {}
 
     while worklist:
         st = worklist.pop()
@@ -1407,11 +1471,15 @@ def run_worklist_result(initial: State) -> List[str]:
             joined = join_frames(seen[key], fr)
             if states_equal(joined, seen[key]):
                 continue
-            seen[key] = joined
-            # update the frame at the top of the stack
+            count = visit_count.get(key, 0) + 1
+            visit_count[key] = count
+            if count >= _WIDEN_THRESHOLD:
+                joined = _widen_frames(seen[key], joined)
+            seen[key] = clone_frame(joined)  # clone so step_abstract mutations don't corrupt seen
             st.frames.items[-1] = joined
         else:
-            seen[key] = fr
+            seen[key] = clone_frame(fr)  # clone so step_abstract mutations don't corrupt seen
+            visit_count[key] = 0
 
         res = step_abstract(st)
         if isinstance(res, str):

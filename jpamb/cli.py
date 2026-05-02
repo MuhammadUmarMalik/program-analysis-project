@@ -274,7 +274,7 @@ def checkhealth(suite):
     "--report",
     "-r",
     default="-",
-    type=click.File(mode="w"),
+    type=click.File(mode="w", encoding="utf-8"),
     help="A file to write the report to. (Good for golden testing)",
 )
 @click.argument("PROGRAM", nargs=-1)
@@ -340,7 +340,7 @@ def test(suite, program, report, filter, fail_fast, with_python, timeout):
     "--report",
     "-r",
     default="-",
-    type=click.File(mode="w"),
+    type=click.File(mode="w", encoding="utf-8"),
     help="A file to write the report to. (Good for golden testing)",
 )
 @click.argument("PROGRAM", nargs=-1)
@@ -423,7 +423,7 @@ def interpret(suite, program, report, filter, with_python, timeout, stepwise):
     "--report",
     "-r",
     default="-",
-    type=click.File(mode="w"),
+    type=click.File(mode="w", encoding="utf-8"),
     help="A file to write the report to",
 )
 @click.argument("PROGRAM", nargs=-1)
