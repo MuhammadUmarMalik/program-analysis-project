@@ -1,5 +1,4 @@
 import sys
-import traceback
 import jpamb
 
 from abstract_interpreter import analyze_method_no_inputs, get_abstract_warnings
@@ -26,20 +25,15 @@ def main():
         print(ANALYZER_VERSION)
         print(STUDENT_GROUP)
         print(",".join(TAGS))
-        print("no")
+        print("no")  # or "yes" if you want to share system info
         return
 
     # Normal analysis mode (no concrete inputs)
     try:
         outcomes = analyze_method_no_inputs(methodid)
-    except NotImplementedError as e:
-        # Unimplemented opcode / method — not a bug; just return no outcomes.
-        print(f"[static-analysis-engine] NotImplementedError: {e}", file=sys.stderr)
-        outcomes = []
     except Exception as e:
-        # Unexpected crash — log full traceback for debugging, but don't die.
-        print(f"[static-analysis-engine] ERROR: {e}", file=sys.stderr)
-        traceback.print_exc(file=sys.stderr)
+        # If the abstract interpreter crashes, fall back to "no info"
+        print(f"[my_analyzer] analysis failed for {methodid}: {e}", file=sys.stderr)
         outcomes = []
 
     # Optionally fetch warnings (not used in scoring, but available)
