@@ -1,42 +1,97 @@
 # 02242-Program-Analysis-Project
+
 Project Analysis Final Project Code for Project "ASTRA"
 
-See [docs/analysis_design.md](docs/analysis_design.md) for the full design
-document covering both abstract domains and the interpreter architecture.
+---
 
-## Quick start
+## Build
 
 ```bash
-# Build jpamb test suite
+# Build all Java test cases
 uv run jpamb -vv build
-
-# Run concrete interpreter
-uv run jpamb interpret -W --timeout 10 --stepwise solutions/interpreter.py
-
-# Run unit tests
-uv run pytest tests/ -v
-
-# Run main analyzer (baseline StringAbs domain)
-uv run jpamb test solutions/my_analyzer.py
-
-# Evaluate and dump JSON results
-uv run jpamb evaluate solutions/my_analyzer.py > results_baseline.json
-
-# Syntactic fast-path analyzer
-uv run jpamb evaluate solutions/syntactic_analysis.py > results_syntactic.json
-
-# Benchmark: baseline vs prefix abstract interpreter
-python solutions/benchmark.py --max-cases 100
-
-# String-tree analyzer (expression-tree tracking)
-python solutions/abstract_interpreter_stringtree.py \
-    'jpamb.cases.Strings.stringEqualsHello:(Ljava/lang/String;)V'
 ```
 
-## Abstract domains
+---
 
-| Domain       | File                          | Key extras               |
-|-------------|-------------------------------|--------------------------|
-| StringAbs   | `solutions/abstract_interpreter.py` | const + length interval |
-| StringAbs2  | `solutions/string_abs2.py`    | prefix + length + null flag |
-| StringTree  | `solutions/stringtree.py`     | symbolic expression trees |
+## Concrete Interpreter
+
+```bash
+# Run interpreter (stepwise, with warnings, 10s timeout)
+uv run jpamb interpret -W --timeout 10 --stepwise solutions/interpreter.py
+
+# Test interpreter against expected output
+uv run jpamb test solutions/interpreter.py
+
+# Run interpreter on a single method
+uv run python solutions/interpreter.py "jpamb.cases.Arrays.binarySearch:(I)V"
+```
+
+---
+
+## Abstract Interpreter (my_analyzer)
+
+```bash
+# Run full test suite
+uv run jpamb test solutions/my_analyzer.py
+
+# Run on a single method
+uv run python solutions/my_analyzer.py "jpamb.cases.Arrays.arraySometimesNull:(I)V"
+
+# Run pytest unit tests
+uv run pytest test/test_abstract_interpreter.py
+
+# Save evaluation results to file
+uv run jpamb evaluate solutions/my_analyzer.py > my_analyzer_result.json
+```
+
+---
+
+## Novel Abstract Interpreter (novel_analyzer)
+
+```bash
+# Run full test suite
+uv run jpamb test solutions/novel_analyzer.py
+
+# Run on a single method
+uv run python solutions/novel_analyzer.py "jpamb.cases.Arrays.binarySearch:(I)V"
+
+# Save evaluation results to file
+uv run jpamb evaluate solutions/novel_analyzer.py > novel_analyzer_result.json
+```
+
+---
+
+## Syntactic Analysis
+
+```bash
+# Run syntactic analysis on a single method
+uv run solutions/syntactic_analysis.py "jpamb.cases.Strings.stringEqualsHello:(Ljava/lang/String;)V"
+
+# Save evaluation results to file
+uv run jpamb evaluate solutions/syntactic_analysis.py > syntactic_result.json
+```
+
+---
+
+## Inspect Bytecode
+
+```bash
+# View bytecode of any method
+uv run jpamb inspect "jpamb.cases.Arrays.binarySearch:(I)V"
+uv run jpamb inspect "jpamb.cases.Strings.stringEqualsHello:(Ljava/lang/String;)V"
+```
+
+---
+
+## Useful Flags
+
+```bash
+# Filter to a single test case
+uv run jpamb test solutions/my_analyzer.py --filter "jpamb.cases.Arrays.arraySometimesNull:(I)V"
+
+# Verbose output (show scores per case)
+uv run jpamb test solutions/my_analyzer.py --verbose
+
+# List all available test cases
+uv run jpamb test solutions/my_analyzer.py --list
+```
