@@ -117,7 +117,7 @@ def run(cmd: list[str], /, timeout=2.0, logout=None, logerr=None, **kwargs):
         )
         tout.start()
 
-                # Compute remaining time; ensure it's never negative
+        # Compute remaining time; ensure it's never negative
         if timeout:
             remaining = end - monotonic()
             if remaining <= 0:
@@ -274,7 +274,7 @@ def checkhealth(suite):
     "--report",
     "-r",
     default="-",
-    type=click.File(mode="w"),
+    type=click.File(mode="w", encoding="utf-8"),
     help="A file to write the report to. (Good for golden testing)",
 )
 @click.argument("PROGRAM", nargs=-1)
@@ -340,7 +340,7 @@ def test(suite, program, report, filter, fail_fast, with_python, timeout):
     "--report",
     "-r",
     default="-",
-    type=click.File(mode="w"),
+    type=click.File(mode="w", encoding="utf-8"),
     help="A file to write the report to. (Good for golden testing)",
 )
 @click.argument("PROGRAM", nargs=-1)
@@ -423,7 +423,7 @@ def interpret(suite, program, report, filter, with_python, timeout, stepwise):
     "--report",
     "-r",
     default="-",
-    type=click.File(mode="w"),
+    type=click.File(mode="w", encoding="utf-8"),
     help="A file to write the report to",
 )
 @click.argument("PROGRAM", nargs=-1)
@@ -698,7 +698,7 @@ def build(suite, compile, decompile, document, test, docker):
                     cp,
                     "-ea",
                     "jpamb.Runtime",
-                    str(case.methodid),
+                    case.methodid.jvm_str(),
                     input_arg,
                 ]
 
