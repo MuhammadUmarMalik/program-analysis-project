@@ -148,14 +148,14 @@ class StringAbs:
             return other
         if other.is_bot:
             return self
-            const = self.const if self.const == other.const else None
+        const = self.const if self.const == other.const else None
         expr = self.expr if self.expr == other.expr else None
         return StringAbs(const, join(self.length, other.length), expr)
 
     def __str__(self) -> str:
         if self.const is not None:
             return f"\"{self.const}\":{self.length}"
-            return f"Str{self.length}"
+        return f"Str{self.length}"
 
 
 # Abstract value:
@@ -501,7 +501,7 @@ def str_substring(s: StringAbs, i_ivl: Interval, j_ivl: Interval) -> Tuple[Strin
     else:
         if i_lo < 0 or j_lo < 0:
             may_oob = True
-        if i_hi >= L.hi or j_hi > L.hi:
+        if not L.is_bot and j_hi > L.lo:
             may_oob = True
         if i_lo > j_hi:
             may_oob = True
