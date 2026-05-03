@@ -390,9 +390,6 @@ def analyze_string_ops_and_assert(methodid):
             log.debug("division-by-zero literal (syntactic): %s", src)
 
     # ------------------------------------------------------------
-
-
-        # ------------------------------------------------------------
     # 4. NULL POINTER & STRING OUT-OF-BOUNDS HEURISTICS
     # ------------------------------------------------------------
 
@@ -442,6 +439,22 @@ def analyze_string_ops_and_assert(methodid):
                 )
                 break
 
+    # look for s.substring(start, end) where end > len(literal) or start > end
+    if not has_string_oob:
+        for m in re.finditer(
+            r'\b([A-Za-z_]\w*)\s*\.\s*substring\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)',
+            body_src
+        ):
+            var, start, end = m.group(1), int(m.group(2)), int(m.group(3))
+            if var in string_literal_lengths:
+                length = string_literal_lengths[var]
+                if end > length or start > end:
+                    has_string_oob = True
+                    log.debug(
+                        "string literal OOB candidate: %s.substring(%d,%d) length=%d",
+                        var, start, end, length,
+                    )
+                    break
 
     return {
         "has_string_ops": has_string_ops,
@@ -519,7 +532,7 @@ if __name__ == "__main__":
     print(f"source-has-literal-div-by-0:  {has_div_by_zero}")
     print()
 
-        # --- Heuristic probabilities (using syntactic + bytecode features) ---
+    # --- Heuristic probabilities (using syntactic + bytecode features) ---
 
     synt_has_assert = synt_facts.get("has_assert", False)
     synt_div_zero = synt_facts.get("has_div_zero_literal", False)
