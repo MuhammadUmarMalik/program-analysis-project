@@ -1,40 +1,40 @@
 ┌ Case jpamb.cases.Simple.assertBoolean:(Z)V
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.assertBoolean:(Z)V'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:18.935[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP get static jpamb/cases/Simple.$assertionsDisabled:Z
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:0>[0m
+│││ 2026-05-03 15:07:46.902 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:0>
 │││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:0>
-│││ [32m2026-05-02 05:12:18.936[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertBoolean:(Z)V:1>[0m
+│││ 2026-05-03 15:07:46.903 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertBoolean:(Z)V:1>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertBoolean:(Z)V:1>
-│││ [32m2026-05-02 05:12:18.936[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:2>[0m
+│││ 2026-05-03 15:07:46.903 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:2>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:2>
-│││ [32m2026-05-02 05:12:18.938[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertBoolean:(Z)V:3>[0m
+│││ 2026-05-03 15:07:46.903 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertBoolean:(Z)V:3>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertBoolean:(Z)V:3>
-│││ [32m2026-05-02 05:12:18.938[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP new java/lang/AssertionError
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:4>[0m
+│││ 2026-05-03 15:07:46.903 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP new java/lang/AssertionError
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:4>
 │││ [DEBUG] STEP new java/lang/AssertionError
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:4>
-│││ [32m2026-05-02 05:12:18.939[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP dup 1
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:5>[0m
+│││ 2026-05-03 15:07:46.904 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP dup 1
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:5>
 │││ [DEBUG] STEP dup 1
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:5>
-│││ [32m2026-05-02 05:12:18.939[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP invoke special java/lang/AssertionError.<init>:()V
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:6>[0m
+│││ 2026-05-03 15:07:46.904 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:6>
 │││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:6>
-│││ [32m2026-05-02 05:12:18.940[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP throw
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:7>[0m
+│││ 2026-05-03 15:07:46.904 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP throw
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:7>
 │││ [DEBUG] STEP throw
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertBoolean:(Z)V:7>
-│││ [32m2026-05-02 05:12:18.940[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:V
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:8>[0m
+│││ 2026-05-03 15:07:46.904 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:V
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:8>
 │││ [DEBUG] STEP return:V
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertBoolean:(Z)V:8>
 ││└ Stderr
@@ -60,28 +60,28 @@
 ┌ Case jpamb.cases.Simple.assertFalse:()V
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.assertFalse:()V'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:19.656[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP get static jpamb/cases/Simple.$assertionsDisabled:Z
-│││ {} <{}, \u03f5, jpamb.cases.Simple.assertFalse:()V:0>[0m
+│││ 2026-05-03 15:07:47.269 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{}, \u03f5, jpamb.cases.Simple.assertFalse:()V:0>
 │││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
 │││ {} <{}, \u03f5, jpamb.cases.Simple.assertFalse:()V:0>
-│││ [32m2026-05-02 05:12:19.659[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 6
-│││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertFalse:()V:1>[0m
+│││ 2026-05-03 15:07:47.270 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 6
+│││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertFalse:()V:1>
 │││ [DEBUG] STEP ifz ne 6
 │││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertFalse:()V:1>
-│││ [32m2026-05-02 05:12:19.660[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP new java/lang/AssertionError
-│││ {} <{}, \u03f5, jpamb.cases.Simple.assertFalse:()V:2>[0m
+│││ 2026-05-03 15:07:47.270 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP new java/lang/AssertionError
+│││ {} <{}, \u03f5, jpamb.cases.Simple.assertFalse:()V:2>
 │││ [DEBUG] STEP new java/lang/AssertionError
 │││ {} <{}, \u03f5, jpamb.cases.Simple.assertFalse:()V:2>
-│││ [32m2026-05-02 05:12:19.661[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP dup 1
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0), jpamb.cases.Simple.assertFalse:()V:3>[0m
+│││ 2026-05-03 15:07:47.270 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP dup 1
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0), jpamb.cases.Simple.assertFalse:()V:3>
 │││ [DEBUG] STEP dup 1
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0), jpamb.cases.Simple.assertFalse:()V:3>
-│││ [32m2026-05-02 05:12:19.661[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP invoke special java/lang/AssertionError.<init>:()V
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertFalse:()V:4>[0m
+│││ 2026-05-03 15:07:47.270 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertFalse:()V:4>
 │││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertFalse:()V:4>
-│││ [32m2026-05-02 05:12:19.662[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP throw
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0), jpamb.cases.Simple.assertFalse:()V:5>[0m
+│││ 2026-05-03 15:07:47.271 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP throw
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0), jpamb.cases.Simple.assertFalse:()V:5>
 │││ [DEBUG] STEP throw
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{}, ('ref', 0), jpamb.cases.Simple.assertFalse:()V:5>
 ││└ Stderr
@@ -107,40 +107,40 @@
 ┌ Case jpamb.cases.Simple.assertInteger:(I)V
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.assertInteger:(I)V'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:20.408[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP get static jpamb/cases/Simple.$assertionsDisabled:Z
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:0>[0m
+│││ 2026-05-03 15:07:47.637 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:0>
 │││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:0>
-│││ [32m2026-05-02 05:12:20.409[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertInteger:(I)V:1>[0m
+│││ 2026-05-03 15:07:47.638 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertInteger:(I)V:1>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertInteger:(I)V:1>
-│││ [32m2026-05-02 05:12:20.410[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:2>[0m
+│││ 2026-05-03 15:07:47.638 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:2>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:2>
-│││ [32m2026-05-02 05:12:20.411[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertInteger:(I)V:3>[0m
+│││ 2026-05-03 15:07:47.639 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertInteger:(I)V:3>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertInteger:(I)V:3>
-│││ [32m2026-05-02 05:12:20.411[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP new java/lang/AssertionError
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:4>[0m
+│││ 2026-05-03 15:07:47.639 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP new java/lang/AssertionError
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:4>
 │││ [DEBUG] STEP new java/lang/AssertionError
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:4>
-│││ [32m2026-05-02 05:12:20.412[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP dup 1
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:5>[0m
+│││ 2026-05-03 15:07:47.640 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP dup 1
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:5>
 │││ [DEBUG] STEP dup 1
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:5>
-│││ [32m2026-05-02 05:12:20.412[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP invoke special java/lang/AssertionError.<init>:()V
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:6>[0m
+│││ 2026-05-03 15:07:47.640 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:6>
 │││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:6>
-│││ [32m2026-05-02 05:12:20.412[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP throw
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:7>[0m
+│││ 2026-05-03 15:07:47.641 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP throw
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:7>
 │││ [DEBUG] STEP throw
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertInteger:(I)V:7>
-│││ [32m2026-05-02 05:12:20.413[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:V
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:8>[0m
+│││ 2026-05-03 15:07:47.641 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:V
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:8>
 │││ [DEBUG] STEP return:V
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertInteger:(I)V:8>
 ││└ Stderr
@@ -166,40 +166,40 @@
 ┌ Case jpamb.cases.Simple.assertPositive:(I)V
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.assertPositive:(I)V'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:20.996[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP get static jpamb/cases/Simple.$assertionsDisabled:Z
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:0>[0m
+│││ 2026-05-03 15:07:48.030 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:0>
 │││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:0>
-│││ [32m2026-05-02 05:12:20.997[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertPositive:(I)V:1>[0m
+│││ 2026-05-03 15:07:48.031 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertPositive:(I)V:1>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.assertPositive:(I)V:1>
-│││ [32m2026-05-02 05:12:20.997[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:2>[0m
+│││ 2026-05-03 15:07:48.031 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:2>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:2>
-│││ [32m2026-05-02 05:12:20.998[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz gt 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertPositive:(I)V:3>[0m
+│││ 2026-05-03 15:07:48.031 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz gt 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertPositive:(I)V:3>
 │││ [DEBUG] STEP ifz gt 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.assertPositive:(I)V:3>
-│││ [32m2026-05-02 05:12:20.998[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP new java/lang/AssertionError
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:4>[0m
+│││ 2026-05-03 15:07:48.031 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP new java/lang/AssertionError
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:4>
 │││ [DEBUG] STEP new java/lang/AssertionError
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:4>
-│││ [32m2026-05-02 05:12:20.999[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP dup 1
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:5>[0m
+│││ 2026-05-03 15:07:48.032 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP dup 1
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:5>
 │││ [DEBUG] STEP dup 1
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:5>
-│││ [32m2026-05-02 05:12:20.999[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP invoke special java/lang/AssertionError.<init>:()V
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:6>[0m
+│││ 2026-05-03 15:07:48.032 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:6>
 │││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:6>
-│││ [32m2026-05-02 05:12:20.999[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP throw
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:7>[0m
+│││ 2026-05-03 15:07:48.032 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP throw
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:7>
 │││ [DEBUG] STEP throw
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.assertPositive:(I)V:7>
-│││ [32m2026-05-02 05:12:21.000[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:V
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:8>[0m
+│││ 2026-05-03 15:07:48.032 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:V
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:8>
 │││ [DEBUG] STEP return:V
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.assertPositive:(I)V:8>
 ││└ Stderr
@@ -225,36 +225,36 @@
 ┌ Case jpamb.cases.Simple.checkBeforeAssert:(I)V
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.checkBeforeAssert:(I)V'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:21.587[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:0>[0m
+│││ 2026-05-03 15:07:48.392 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:0>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:0>
-│││ [32m2026-05-02 05:12:21.587[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 3
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeAssert:(I)V:1>[0m
+│││ 2026-05-03 15:07:48.393 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 3
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeAssert:(I)V:1>
 │││ [DEBUG] STEP ifz ne 3
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeAssert:(I)V:1>
-│││ [32m2026-05-02 05:12:21.588[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:V
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:2>[0m
+│││ 2026-05-03 15:07:48.393 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:V
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:2>
 │││ [DEBUG] STEP return:V
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:2>
-│││ [32m2026-05-02 05:12:21.588[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP get static jpamb/cases/Simple.$assertionsDisabled:Z
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:3>[0m
+│││ 2026-05-03 15:07:48.393 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:3>
 │││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:3>
-│││ [32m2026-05-02 05:12:21.589[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 13
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeAssert:(I)V:4>[0m
+│││ 2026-05-03 15:07:48.394 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 13
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeAssert:(I)V:4>
 │││ [DEBUG] STEP ifz ne 13
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeAssert:(I)V:4>
-│││ [32m2026-05-02 05:12:21.589[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:5>[0m
+│││ 2026-05-03 15:07:48.394 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:5>
 │││ [DEBUG] STEP push:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeAssert:(I)V:5>
-│││ [32m2026-05-02 05:12:21.589[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeAssert:(I)V:6>[0m
+│││ 2026-05-03 15:07:48.394 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeAssert:(I)V:6>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeAssert:(I)V:6>
-│││ [32m2026-05-02 05:12:21.590[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I div
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeAssert:(I)V:7>[0m
+│││ 2026-05-03 15:07:48.394 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I div
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeAssert:(I)V:7>
 │││ [DEBUG] STEP binary:I div
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeAssert:(I)V:7>
 ││└ Stderr
@@ -280,68 +280,68 @@
 ┌ Case jpamb.cases.Simple.checkBeforeDivideByN2:(I)I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.checkBeforeDivideByN2:(I)I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:22.124[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:0>[0m
+│││ 2026-05-03 15:07:48.780 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:0>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:0>
-│││ [32m2026-05-02 05:12:22.125[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz eq 6
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:1>[0m
+│││ 2026-05-03 15:07:48.781 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz eq 6
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:1>
 │││ [DEBUG] STEP ifz eq 6
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:1>
-│││ [32m2026-05-02 05:12:22.125[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:2>[0m
+│││ 2026-05-03 15:07:48.781 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:2>
 │││ [DEBUG] STEP push:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:2>
-│││ [32m2026-05-02 05:12:22.126[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:3>[0m
+│││ 2026-05-03 15:07:48.781 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:3>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:3>
-│││ [32m2026-05-02 05:12:22.126[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I div
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:4>[0m
+│││ 2026-05-03 15:07:48.782 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I div
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:4>
 │││ [DEBUG] STEP binary:I div
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:4>
-│││ [32m2026-05-02 05:12:22.126[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP get static jpamb/cases/Simple.$assertionsDisabled:Z
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:6>[0m
+│││ 2026-05-03 15:07:48.782 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:6>
 │││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:6>
-│││ [32m2026-05-02 05:12:22.127[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 15
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:7>[0m
+│││ 2026-05-03 15:07:48.782 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 15
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:7>
 │││ [DEBUG] STEP ifz ne 15
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:7>
-│││ [32m2026-05-02 05:12:22.127[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 10
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:8>[0m
+│││ 2026-05-03 15:07:48.783 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 10
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:8>
 │││ [DEBUG] STEP push:I 10
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:8>
-│││ [32m2026-05-02 05:12:22.127[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=10, hi=10)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:9>[0m
+│││ 2026-05-03 15:07:48.783 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=10, hi=10)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:9>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=10, hi=10)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:9>
-│││ [32m2026-05-02 05:12:22.127[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP if gt 15
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=10, hi=10))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:10>[0m
+│││ 2026-05-03 15:07:48.783 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP if gt 15
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=10, hi=10))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:10>
 │││ [DEBUG] STEP if gt 15
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=10, hi=10))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:10>
-│││ [32m2026-05-02 05:12:22.128[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP new java/lang/AssertionError
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:11>[0m
+│││ 2026-05-03 15:07:48.783 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP new java/lang/AssertionError
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:11>
 │││ [DEBUG] STEP new java/lang/AssertionError
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:11>
-│││ [32m2026-05-02 05:12:22.128[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP dup 1
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:12>[0m
+│││ 2026-05-03 15:07:48.784 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP dup 1
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:12>
 │││ [DEBUG] STEP dup 1
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:12>
-│││ [32m2026-05-02 05:12:22.128[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP invoke special java/lang/AssertionError.<init>:()V
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:13>[0m
+│││ 2026-05-03 15:07:48.784 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:13>
 │││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:13>
-│││ [32m2026-05-02 05:12:22.129[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP throw
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:14>[0m
+│││ 2026-05-03 15:07:48.784 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP throw
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:14>
 │││ [DEBUG] STEP throw
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:14>
-│││ [32m2026-05-02 05:12:22.129[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:15>[0m
+│││ 2026-05-03 15:07:48.784 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:15>
 │││ [DEBUG] STEP push:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:15>
-│││ [32m2026-05-02 05:12:22.129[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:I
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:16>[0m
+│││ 2026-05-03 15:07:48.785 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:I
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:16>
 │││ [DEBUG] STEP return:I
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:16>
 ││└ Stderr
@@ -367,48 +367,48 @@
 ┌ Case jpamb.cases.Simple.checkBeforeDivideByN:(I)I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.checkBeforeDivideByN:(I)I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:22.693[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP get static jpamb/cases/Simple.$assertionsDisabled:Z
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:0>[0m
+│││ 2026-05-03 15:07:49.236 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:0>
 │││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:0>
-│││ [32m2026-05-02 05:12:22.694[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:1>[0m
+│││ 2026-05-03 15:07:49.237 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:1>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:1>
-│││ [32m2026-05-02 05:12:22.694[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:2>[0m
+│││ 2026-05-03 15:07:49.237 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:2>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:2>
-│││ [32m2026-05-02 05:12:22.695[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:3>[0m
+│││ 2026-05-03 15:07:49.237 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:3>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:3>
-│││ [32m2026-05-02 05:12:22.695[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP new java/lang/AssertionError
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:4>[0m
+│││ 2026-05-03 15:07:49.238 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP new java/lang/AssertionError
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:4>
 │││ [DEBUG] STEP new java/lang/AssertionError
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:4>
-│││ [32m2026-05-02 05:12:22.696[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP dup 1
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:5>[0m
+│││ 2026-05-03 15:07:49.239 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP dup 1
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:5>
 │││ [DEBUG] STEP dup 1
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:5>
-│││ [32m2026-05-02 05:12:22.696[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP invoke special java/lang/AssertionError.<init>:()V
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:6>[0m
+│││ 2026-05-03 15:07:49.240 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:6>
 │││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:6>
-│││ [32m2026-05-02 05:12:22.697[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP throw
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:7>[0m
+│││ 2026-05-03 15:07:49.240 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP throw
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:7>
 │││ [DEBUG] STEP throw
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:7>
-│││ [32m2026-05-02 05:12:22.697[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:8>[0m
+│││ 2026-05-03 15:07:49.240 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:8>
 │││ [DEBUG] STEP push:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:8>
-│││ [32m2026-05-02 05:12:22.698[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:9>[0m
+│││ 2026-05-03 15:07:49.241 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:9>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:9>
-│││ [32m2026-05-02 05:12:22.698[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I div
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:10>[0m
+│││ 2026-05-03 15:07:49.241 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I div
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:10>
 │││ [DEBUG] STEP binary:I div
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:10>
 ││└ Stderr
@@ -434,16 +434,16 @@
 ┌ Case jpamb.cases.Simple.divideByN:(I)I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.divideByN:(I)I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:23.260[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideByN:(I)I:0>[0m
+│││ 2026-05-03 15:07:49.659 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideByN:(I)I:0>
 │││ [DEBUG] STEP push:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideByN:(I)I:0>
-│││ [32m2026-05-02 05:12:23.260[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByN:(I)I:1>[0m
+│││ 2026-05-03 15:07:49.660 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByN:(I)I:1>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByN:(I)I:1>
-│││ [32m2026-05-02 05:12:23.260[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I div
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByN:(I)I:2>[0m
+│││ 2026-05-03 15:07:49.660 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I div
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByN:(I)I:2>
 │││ [DEBUG] STEP binary:I div
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByN:(I)I:2>
 ││└ Stderr
@@ -469,24 +469,24 @@
 ┌ Case jpamb.cases.Simple.divideByNMinus10054203:(I)I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.divideByNMinus10054203:(I)I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:23.843[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideByNMinus10054203:(I)I:0>[0m
+│││ 2026-05-03 15:07:50.035 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideByNMinus10054203:(I)I:0>
 │││ [DEBUG] STEP push:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideByNMinus10054203:(I)I:0>
-│││ [32m2026-05-02 05:12:23.846[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:1>[0m
+│││ 2026-05-03 15:07:50.036 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:1>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:1>
-│││ [32m2026-05-02 05:12:23.846[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 10054203
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:2>[0m
+│││ 2026-05-03 15:07:50.036 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 10054203
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:2>
 │││ [DEBUG] STEP push:I 10054203
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:2>
-│││ [32m2026-05-02 05:12:23.847[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I sub
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=10054203, hi=10054203)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:3>[0m
+│││ 2026-05-03 15:07:50.036 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I sub
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=10054203, hi=10054203)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:3>
 │││ [DEBUG] STEP binary:I sub
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=10054203, hi=10054203)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:3>
-│││ [32m2026-05-02 05:12:23.847[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I div
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:4>[0m
+│││ 2026-05-03 15:07:50.037 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I div
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:4>
 │││ [DEBUG] STEP binary:I div
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideByNMinus10054203:(I)I:4>
 ││└ Stderr
@@ -512,16 +512,16 @@
 ┌ Case jpamb.cases.Simple.divideByZero:()I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.divideByZero:()I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:24.496[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 1
-│││ {} <{}, \u03f5, jpamb.cases.Simple.divideByZero:()I:0>[0m
+│││ 2026-05-03 15:07:50.376 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 1
+│││ {} <{}, \u03f5, jpamb.cases.Simple.divideByZero:()I:0>
 │││ [DEBUG] STEP push:I 1
 │││ {} <{}, \u03f5, jpamb.cases.Simple.divideByZero:()I:0>
-│││ [32m2026-05-02 05:12:24.497[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 0
-│││ {} <{}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByZero:()I:1>[0m
+│││ 2026-05-03 15:07:50.377 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 0
+│││ {} <{}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByZero:()I:1>
 │││ [DEBUG] STEP push:I 0
 │││ {} <{}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.divideByZero:()I:1>
-│││ [32m2026-05-02 05:12:24.497[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I div
-│││ {} <{}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.divideByZero:()I:2>[0m
+│││ 2026-05-03 15:07:50.377 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I div
+│││ {} <{}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.divideByZero:()I:2>
 │││ [DEBUG] STEP binary:I div
 │││ {} <{}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.divideByZero:()I:2>
 ││└ Stderr
@@ -547,16 +547,16 @@
 ┌ Case jpamb.cases.Simple.divideZeroByZero:(II)I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.divideZeroByZero:(II)I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:25.260[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideZeroByZero:(II)I:0>[0m
+│││ 2026-05-03 15:07:50.729 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideZeroByZero:(II)I:0>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.divideZeroByZero:(II)I:0>
-│││ [32m2026-05-02 05:12:25.261[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideZeroByZero:(II)I:1>[0m
+│││ 2026-05-03 15:07:50.729 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideZeroByZero:(II)I:1>
 │││ [DEBUG] STEP load:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideZeroByZero:(II)I:1>
-│││ [32m2026-05-02 05:12:25.261[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I div
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideZeroByZero:(II)I:2>[0m
+│││ 2026-05-03 15:07:50.729 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I div
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideZeroByZero:(II)I:2>
 │││ [DEBUG] STEP binary:I div
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.divideZeroByZero:(II)I:2>
 ││└ Stderr
@@ -582,12 +582,12 @@
 ┌ Case jpamb.cases.Simple.earlyReturn:()I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.earlyReturn:()I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:25.964[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 0
-│││ {} <{}, \u03f5, jpamb.cases.Simple.earlyReturn:()I:0>[0m
+│││ 2026-05-03 15:07:51.077 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 0
+│││ {} <{}, \u03f5, jpamb.cases.Simple.earlyReturn:()I:0>
 │││ [DEBUG] STEP push:I 0
 │││ {} <{}, \u03f5, jpamb.cases.Simple.earlyReturn:()I:0>
-│││ [32m2026-05-02 05:12:25.965[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:I
-│││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.earlyReturn:()I:1>[0m
+│││ 2026-05-03 15:07:51.077 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:I
+│││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.earlyReturn:()I:1>
 │││ [DEBUG] STEP return:I
 │││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.earlyReturn:()I:1>
 ││└ Stderr
@@ -613,20 +613,20 @@
 ┌ Case jpamb.cases.Simple.justAdd:(II)I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.justAdd:(II)I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:26.491[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.justAdd:(II)I:0>[0m
+│││ 2026-05-03 15:07:51.417 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.justAdd:(II)I:0>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.justAdd:(II)I:0>
-│││ [32m2026-05-02 05:12:26.492[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:1>[0m
+│││ 2026-05-03 15:07:51.417 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:1>
 │││ [DEBUG] STEP load:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:1>
-│││ [32m2026-05-02 05:12:26.492[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I add
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:2>[0m
+│││ 2026-05-03 15:07:51.417 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I add
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:2>
 │││ [DEBUG] STEP binary:I add
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:2>
-│││ [32m2026-05-02 05:12:26.492[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:I
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:3>[0m
+│││ 2026-05-03 15:07:51.417 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:I
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:3>
 │││ [DEBUG] STEP return:I
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justAdd:(II)I:3>
 ││└ Stderr
@@ -652,20 +652,20 @@
 ┌ Case jpamb.cases.Simple.justMulitply:(II)I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.justMulitply:(II)I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:27.012[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.justMulitply:(II)I:0>[0m
+│││ 2026-05-03 15:07:51.803 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.justMulitply:(II)I:0>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.justMulitply:(II)I:0>
-│││ [32m2026-05-02 05:12:27.012[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:1>[0m
+│││ 2026-05-03 15:07:51.804 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:1>
 │││ [DEBUG] STEP load:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:1>
-│││ [32m2026-05-02 05:12:27.013[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I mul
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:2>[0m
+│││ 2026-05-03 15:07:51.804 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I mul
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:2>
 │││ [DEBUG] STEP binary:I mul
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf))('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:2>
-│││ [32m2026-05-02 05:12:27.013[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:I
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:3>[0m
+│││ 2026-05-03 15:07:51.805 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:I
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:3>
 │││ [DEBUG] STEP return:I
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf)), 1:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.justMulitply:(II)I:3>
 ││└ Stderr
@@ -691,12 +691,12 @@
 ┌ Case jpamb.cases.Simple.justReturn:()I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.justReturn:()I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:27.602[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 0
-│││ {} <{}, \u03f5, jpamb.cases.Simple.justReturn:()I:0>[0m
+│││ 2026-05-03 15:07:52.194 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 0
+│││ {} <{}, \u03f5, jpamb.cases.Simple.justReturn:()I:0>
 │││ [DEBUG] STEP push:I 0
 │││ {} <{}, \u03f5, jpamb.cases.Simple.justReturn:()I:0>
-│││ [32m2026-05-02 05:12:27.602[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:I
-│││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.justReturn:()I:1>[0m
+│││ 2026-05-03 15:07:52.195 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:I
+│││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.justReturn:()I:1>
 │││ [DEBUG] STEP return:I
 │││ {} <{}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.justReturn:()I:1>
 ││└ Stderr
@@ -722,8 +722,8 @@
 ┌ Case jpamb.cases.Simple.justReturnNothing:()V
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.justReturnNothing:()V'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:28.125[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP return:V
-│││ {} <{}, \u03f5, jpamb.cases.Simple.justReturnNothing:()V:0>[0m
+│││ 2026-05-03 15:07:52.593 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP return:V
+│││ {} <{}, \u03f5, jpamb.cases.Simple.justReturnNothing:()V:0>
 │││ [DEBUG] STEP return:V
 │││ {} <{}, \u03f5, jpamb.cases.Simple.justReturnNothing:()V:0>
 ││└ Stderr
@@ -749,48 +749,48 @@
 ┌ Case jpamb.cases.Simple.multiError:(Z)I
 │┌ Run '.venv\Scripts\python.exe' 'solutions\my_analyzer.py' 'jpamb.cases.Simple.multiError:(Z)I'
 ││┌ Stderr
-│││ [32m2026-05-02 05:12:28.672[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP get static jpamb/cases/Simple.$assertionsDisabled:Z
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:0>[0m
+│││ 2026-05-03 15:07:52.970 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:0>
 │││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:0>
-│││ [32m2026-05-02 05:12:28.672[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.multiError:(Z)I:1>[0m
+│││ 2026-05-03 15:07:52.970 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.multiError:(Z)I:1>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.multiError:(Z)I:1>
-│││ [32m2026-05-02 05:12:28.673[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP load:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:2>[0m
+│││ 2026-05-03 15:07:52.970 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP load:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:2>
 │││ [DEBUG] STEP load:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:2>
-│││ [32m2026-05-02 05:12:28.673[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP ifz ne 8
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.multiError:(Z)I:3>[0m
+│││ 2026-05-03 15:07:52.971 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP ifz ne 8
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.multiError:(Z)I:3>
 │││ [DEBUG] STEP ifz ne 8
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=-inf, hi=inf)), jpamb.cases.Simple.multiError:(Z)I:3>
-│││ [32m2026-05-02 05:12:28.674[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP new java/lang/AssertionError
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:4>[0m
+│││ 2026-05-03 15:07:52.971 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP new java/lang/AssertionError
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:4>
 │││ [DEBUG] STEP new java/lang/AssertionError
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:4>
-│││ [32m2026-05-02 05:12:28.674[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP dup 1
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.multiError:(Z)I:5>[0m
+│││ 2026-05-03 15:07:52.971 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP dup 1
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.multiError:(Z)I:5>
 │││ [DEBUG] STEP dup 1
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.multiError:(Z)I:5>
-│││ [32m2026-05-02 05:12:28.674[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP invoke special java/lang/AssertionError.<init>:()V
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.multiError:(Z)I:6>[0m
+│││ 2026-05-03 15:07:52.971 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.multiError:(Z)I:6>
 │││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0)('ref', 0), jpamb.cases.Simple.multiError:(Z)I:6>
-│││ [32m2026-05-02 05:12:28.675[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP throw
-│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.multiError:(Z)I:7>[0m
+│││ 2026-05-03 15:07:52.972 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP throw
+│││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.multiError:(Z)I:7>
 │││ [DEBUG] STEP throw
 │││ {0: {'class': ClassName('java/lang/AssertionError'), 'fields': {}}} <{0:('int', Interval(lo=-inf, hi=inf))}, ('ref', 0), jpamb.cases.Simple.multiError:(Z)I:7>
-│││ [32m2026-05-02 05:12:28.675[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 1
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:8>[0m
+│││ 2026-05-03 15:07:52.972 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 1
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:8>
 │││ [DEBUG] STEP push:I 1
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, \u03f5, jpamb.cases.Simple.multiError:(Z)I:8>
-│││ [32m2026-05-02 05:12:28.675[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP push:I 0
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.multiError:(Z)I:9>[0m
+│││ 2026-05-03 15:07:52.972 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP push:I 0
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.multiError:(Z)I:9>
 │││ [DEBUG] STEP push:I 0
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1)), jpamb.cases.Simple.multiError:(Z)I:9>
-│││ [32m2026-05-02 05:12:28.676[0m | [34m[1mDEBUG   [0m | [36mabstract_interpreter[0m:[36mstep_abstract[0m:[36m578[0m - [34m[1mSTEP binary:I div
-│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.multiError:(Z)I:10>[0m
+│││ 2026-05-03 15:07:52.972 | DEBUG    | abstract_interpreter:step_abstract:578 - STEP binary:I div
+│││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.multiError:(Z)I:10>
 │││ [DEBUG] STEP binary:I div
 │││ {} <{0:('int', Interval(lo=-inf, hi=inf))}, ('int', Interval(lo=1, hi=1))('int', Interval(lo=0, hi=0)), jpamb.cases.Simple.multiError:(Z)I:10>
 ││└ Stderr
