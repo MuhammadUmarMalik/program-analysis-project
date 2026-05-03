@@ -294,7 +294,7 @@ def step(state: State) -> State | str:
                 elif cond == "isnot":
                     take = (v1.value is not None)
                 else:
-                    raise NotImplementedError(f"Unknown Ifz condition for ref: {cond!r}")
+                    raise NotImplementedError(f"Unknown Ifz ref condition: {cond!r}")
             else:
                 raise TypeError(f"ifz expected int or ref, but got {v1}")
         
@@ -322,11 +322,14 @@ def step(state: State) -> State | str:
                 frame.pc += 1
                 return state
 
-            assert val.type is t, f"expected {t}, but got {val}"
+            # String refs arrive as jvm.Reference in bytecode; they are handled above.
+            # Remaining types: Int, Boolean (stored as int).
             if t is jvm.Int():
                 val = jvm.Value.int(val.value)
             elif t is jvm.Boolean():
                 val = jvm.Value.int(1 if val.value != 0 else 0)
+            elif not (val.type is t):
+                assert False, f"not implemented for type {t}"
             # write local
             frame.locals[i] = val
 
@@ -708,7 +711,9 @@ def step(state: State) -> State | str:
             if obj is None:
                 return "exception" 
 
-            if obj["class"].name == "java/lang/AssertionError":
+            cls_val = obj["class"]
+            cls_name = cls_val.name if hasattr(cls_val, "name") else str(cls_val)
+            if "AssertionError" in cls_name:
                 return "assertion error"
             return "exception"
 
